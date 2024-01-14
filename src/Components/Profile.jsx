@@ -12,6 +12,7 @@ function Profile() {
   const navigate = useNavigate();
   const [error, setError] = useState('');
   const [Massege, setMassege] = useState('');
+  const [showForm, setShowForm] = useState(false);
 
   // ---------------------------------------------------
 
@@ -58,20 +59,25 @@ function Profile() {
   return (
     <>
 
+      <p className='text-4xl text-red-500 font-bold text-center mt-4'>{Massege ? Massege : ''}</p>
+      
       {
         currentUser ?
           <div className='mx-4'>
             <h1 className='text-4xl mt-6 text-orange-500'>Profile</h1>
 
             <div>
-              <p className='text-2xl my-2'>Name : {currentUser.displayName}</p>
+              <p className='text-2xl my-2'>Name : {currentUser.displayName}  {showForm ? <button onClick={() => { setShowForm(false) }} className='mx-2 px-4 py-2 text-sm bg-red-700 hover:bg-red-600 duration-300 text-white'>Close</button> : <button onClick={() => setShowForm(true)} className='mx-2 px-4 py-2 text-sm bg-green-600  duration-300 text-white'>Edit</button>} </p>
               <p className='text-2xl my-2'>Email : {currentUser.email}</p>
 
-              <form onSubmit={handleSetDisplayName} className='my-4'>
-                <label className='text-xl'>Set Name : </label>
-                <input className='border-2 border-gray-300 px-2 py-2' type="text" ref={displayNameRef} placeholder='New Name' />
-                <button type="submit" className='mx-2 px-6 py-2 bg-green-600 text-white'>Set</button>
-              </form>
+              {
+                showForm ? <form onSubmit={handleSetDisplayName} className='my-4'>
+                  <label className='text-xl'>Set Name : </label>
+                  <input className='border-2 border-gray-300 px-2 py-2' type="text" ref={displayNameRef} placeholder='New Name' />
+                  <button type="submit" className='mx-2 px-6 py-2 bg-green-600 hover:bg-green-500 duration-300 text-white'>Set</button>
+                </form>
+                  : null
+              }
 
               <button onClick={handleDelete} className='mx-2 px-6 py-2 bg-red-700 hover:bg-red-600 duration-300 text-white'>Delete</button>
 
@@ -85,7 +91,7 @@ function Profile() {
           </div>
       }
 
-      <p className='text-4xl text-red-500 font-bold text-center mt-4'>{Massege ? Massege : ''}</p>
+
     </>
   );
 }
