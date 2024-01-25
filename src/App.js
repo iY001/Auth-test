@@ -4,6 +4,7 @@ import SignIn from "./Components/SignIn.jsx"
 import SignUp from './Components/SignUp.jsx'
 import AuthProvider from './Context/AuthContext.jsx'
 import Profile from './Components/Profile.jsx'
+import Home from './Routes/Home.jsx'
 function App() {
   return (
     <>
