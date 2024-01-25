@@ -15,9 +15,10 @@ function App() {
         <Link to={"/profile"} className='py-2 px-6 bg-orange-500 text-center text-md text-white mx-2'>Profile</Link>
         </section>
       </div>
+
     <AuthProvider>
-      <Routes>
-        
+      <Routes>  
+        <Route path={"/"} element={<Home/>}></Route>
         <Route path={"/signin"} element={<SignIn/>}></Route>
         <Route path={"/signup"} element={<SignUp/>}></Route>
         <Route path={"/profile"} element={<Profile/>}></Route>
