@@ -1,6 +1,9 @@
 {
-  "name": "react-app",
-  "version": "0.1.0",
+  "name": "auth",
+  "version": "1.0.0",
+  "private": true,
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "tailwind.config.js",
   "homepage": "/profile",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -15,20 +18,22 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "react-dotenv && react-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "browserslist": {
     "production": [
       ">0.2%",
       "not dead",
       "not op_mini all"
     ],
-    
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
