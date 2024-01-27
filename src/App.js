@@ -17,6 +17,7 @@ function App() {
         </section>
       </div>
 
+
     <AuthProvider>
       <Routes>  
         <Route path={"/"} element={<Home/>}></Route>
