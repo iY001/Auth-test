@@ -17,6 +17,10 @@ function Home() {
           }
 
         </section>
+
+        <div className='mx-0'>
+          <Link to={"/dashboard"} className='py-2 my-4 md:my-0 px-6 bg-main text-center text-md text-white mx-2'>Dashboard</Link>
+        </div>
       </div>
       <Outlet />
     </>
